@@ -1,0 +1,19 @@
+<?php
+
+namespace App\Controller;
+
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\Routing\Attribute\Route;
+
+class StatusController
+{
+    #[Route('/api/status', name: 'api_status', methods: ['GET'])]
+    public function status(): JsonResponse
+    {
+        return new JsonResponse([
+            'status' => 'ok',
+            'version' => '1.0.0',
+            'timestamp' => time()
+        ]);
+    }
+}
